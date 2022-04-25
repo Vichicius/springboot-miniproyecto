@@ -32,7 +32,7 @@ public class UsuarioController {
         return this.usuarioService.guardarUsuario(usuario);
     }
 
-    @GetMapping(path = "/{id}") //se ejecuta al entrar a /usuario/{id}
+    @GetMapping(path = "/{id}") //se ejecuta al entrar a /usuario/{id} con el metodo GET
     public Optional<UsuarioModel> obtenerUsuarioPorId(@PathVariable("id") Long id){
         return this.usuarioService.obtenerPorId(id);
     }
@@ -42,7 +42,7 @@ public class UsuarioController {
         return this.usuarioService.obtenerPorPrioridad(prioridad);
     }
 
-    @DeleteMapping(path = "/{id}")
+    @DeleteMapping(path = "/{id}") //se ejecuta al entrar a /usuario/{id} con el metodo DELETE
     public String eliminarUsuario(@PathVariable("id") Long id){
         boolean ok = this.usuarioService.eliminarUsuario(id);
         if(ok){
